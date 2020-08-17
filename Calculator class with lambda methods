@@ -1,0 +1,31 @@
+interface Calculator {
+	public Double calculate( Double a, Double b );
+}
+public class CALCULATOR {
+
+	public double process( double a, double b, Calculator calculator ) {
+		return calculator.calculate( a, b );		
+	}
+
+	public static void main(String[] args) {
+		CALCULATOR C = new CALCULATOR();
+
+		
+		Calculator Addition = (Double a, Double b) -> {
+			return a + b;
+		};
+		System.out.println("Addition: " + C.process(6, 7, Addition));
+		Calculator Subtraction = (Double a, Double b) -> {
+			return a - b;
+		};
+		System.out.println("Subtraction: " + C.process(6, 7, Subtraction));
+        Calculator Multiplication = (Double a, Double b) -> {
+			return a* b;
+		};
+		System.out.println("Multiplication: " + C.process(6, 7, Multiplication));
+		Calculator Division = (Double a, Double b) -> {
+			return a / b;
+		};
+		System.out.println("Division: " + C.process(6, 7, Division));
+	}
+}	
